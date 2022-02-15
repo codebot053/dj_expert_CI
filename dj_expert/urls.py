@@ -24,9 +24,11 @@ api = NinjaAPI()
 # 같이 볼수 있기 때문에 가독성이 더 좋다.
 @api.get("/add")
 def add(request, a: int, b: int):
-    return {"result":a+b}
+    return {"result": a + b}
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", api.urls),
 ]
+
