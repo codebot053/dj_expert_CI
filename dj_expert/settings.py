@@ -34,6 +34,7 @@ ALLOWED_HOSTS: List[str] = []
 # Application definition
 
 INSTALLED_APPS = [
+    "tabom.apps.TabomConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -71,7 +72,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "dj_expert.wsgi.application"
-
 
 
 # Database
@@ -130,3 +130,8 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+try:
+    from dj_expert.local_settings import *
+except ImportError:
+    pass
